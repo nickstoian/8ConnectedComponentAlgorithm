@@ -1,0 +1,73 @@
+
+Project 3: 8-Connected Component Algorithm.
+
+*************************************
+
+I. Input: a binary image from the result of median filter, thresholded at 35.
+
+II. Output:  See algorithm below.
+	- Pretty print the result of the Pass-1 and the EQAry with proper captions
+	- Pretty print the result of the Pass-2 and the EQAry with proper captions
+	- print EQAry after manage the EQAry 
+	- Pretty print the result of the Pass-3 and the EQAry with proper caption
+
+		
+*******************************
+III. Data structure:
+*******************************
+ - An ImageProcessing class
+
+	- numRows (int)
+	- numCols (int)
+	- minVal (int)
+	- maxVal (int)
+	- newLable (int) // initallize to 0
+ 
+	- ZeroFramedAry (int **) a 2D array, need to dynamically allocate at run time
+			of size numRows + 2 by numCols + 2.
+
+	- EQAry (int *) a 1-D array, need to dynamically allocate at run time
+			of size ( numRows * numCols) / 4 
+			and initallize to EQAry[i] = i.
+
+     - methods:
+	- constructor(s)
+		- need to dynamically allocate ZeroFrameAry 
+		- assign values to numRows,..., etc.
+ 	- zeroFramed  
+	- loadImage 
+			// load ZeroFrameAry from input image, 
+			// the first pixel of input image is loaded 
+			// at ZeroFrameAry[1][1]
+
+	- fistPass8conn
+	- secondPass8conn
+	- thirdPass8conn
+	- updateEQAry
+	- manageEQAry
+	- prettyPrint
+	
+      
+*******************************
+III. Algorithms 
+*******************************
+  
+step 0: read the image header
+	   dynamically allocate zerpFramedAry
+
+step 1: load the input image onto zeroFramedAry
+
+
+step 2: firstPass8conn // algorithm taught in class
+	   - prettyprint the result // with caption
+	   - print EQAry	// with index up to newLable with caption
+
+step 3: secondpass8conn // algorithm taught in class
+	   - prettyprint the result // with caption
+	   - print EQAry // with index up to newLable with caption
+
+step 4: manageEQAry // On your own 
+ 	   - print EQAry // with index up to newLable with caption
+
+step 5: thirdPass8conn // algorithm taught in class
+	   - prettyprint the result // with caption
